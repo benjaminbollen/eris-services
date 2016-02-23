@@ -33,8 +33,6 @@ name = "Eris Industries"
 email = "support@erisindustries.com"
 
 [location]
-repository = "github.com/eris-ltd/common/blob/master/docker/openblockchain/Dockerfile"
-
-[machine]
-include = [ "docker" ]
-requires = [ "" ]
+dockerfile = "https://github.com/eris-ltd/common/blob/master/docker/openblockchain/Dockerfile"
+repository = "https://github.com/openblockchain/obc-peer"
+website = "https://www.hyperledger.org/"
