@@ -1,0 +1,37 @@
+# Eris service definition for openblockchain
+# Start it with `$ eris services start openblockchain`
+
+# For more information on configurations, see the services specification:
+# https://docs.erisindustries.com/documentation/eris-cli/latest/services_specification/
+
+# These fields marshal roughly into the `$ docker run` command, see:
+# https://docs.docker.com/engine/reference/run/
+
+# This is a TOML config file.
+# For more information, see https://github.com/toml-lang/toml
+
+name           = "obc"
+
+[service]
+image          = "quay.io/eris/obc"
+data_container = true
+ports          = [ "4243:4243", "30303:30303" ]
+volumes        = [  ]
+environment    = [
+  "ACCOUNT=0",
+  "CHAIN_ID=openblockchain",
+  "LOG_LEVEL=2",
+  "MAKEACCT=true",
+  "PASSWORD=whatever"
+]
+
+[maintainer]
+name = "Eris Industries"
+email = "support@erisindustries.com"
+
+[location]
+repository = "github.com/eris-ltd/common/blob/master/docker/openblockchain/Dockerfile"
+
+[machine]
+include = [ "docker" ]
+requires = [ "" ]
