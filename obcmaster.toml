@@ -1,5 +1,5 @@
 # Eris service definition for openblockchain
-# Start it with `$ eris services start openblockchain`
+# Start it with `$ eris services start obcmaster`
 
 # For more information on configurations, see the services specification:
 # https://docs.erisindustries.com/documentation/eris-cli/latest/services_specification/
@@ -10,7 +10,7 @@
 # This is a TOML config file.
 # For more information, see https://github.com/toml-lang/toml
 
-name           = "obc"
+name           = "obcmaster"
 
 [service]
 image          = "quay.io/eris/obc"
@@ -18,11 +18,9 @@ data_container = true
 ports          = [ "4243:4243", "30303:30303" ]
 volumes        = [  ]
 environment    = [
-  "ACCOUNT=0",
-  "CHAIN_ID=openblockchain",
-  "LOG_LEVEL=2",
-  "MAKEACCT=true",
-  "PASSWORD=whatever"
+  "OPENCHAIN_VM_ENDPOINT=http://172.17.0.1:4243",
+  "OPENCHAIN_PEER_ID=vp1",
+  "OPENCHAIN_PEER_ADDRESSAUTODETECT=true"
 ]
 
 [maintainer]
