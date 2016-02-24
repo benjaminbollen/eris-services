@@ -1,9 +1,13 @@
 # Eris service definition for openblockchain
-# Start it with `$ eris services start obc`
-# To set up a local testnet ensure `obcmaster` is running first
-# Every node needs a unique OPENCHAIN_PEER_ID of the form vpX,
-# where X is the integer from 0 to N-1 when using the proof-of-stake
-# consensus engine. Please copy and edit this file and register it as a service.
+# Start it with `$ eris services start obc --env OPENCHAIN_PEER_ID=vpX` where X
+# is the integer enumerating the nodes.
+# To set up a testnet add the environment variable to all secondary nodes
+# `OPENCHAIN_PEER_DISCOVERY_ROOTNODE=<IP_of_root_node>:30303`.
+# For additional information see the open blockchain [setup guide](https://github.com/openblockchain/obc-docs/blob/master/dev-setup/devnet-setup.md).
+
+# Note that the default open blockchain comes with no consensus engine (NOOPS)
+# Reference to the [setup guide](https://github.com/openblockchain/obc-docs/blob/master/dev-setup/devnet-setup.md#using-consensus-plugin)
+# to follow the instructions needed.
 
 # For more information on configurations, see the services specification:
 # https://docs.erisindustries.com/documentation/eris-cli/latest/services_specification/
