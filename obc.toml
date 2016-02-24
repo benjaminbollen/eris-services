@@ -23,9 +23,7 @@ ports          = [ "4243:4243", "30303:30303" ]
 volumes        = [  ]
 environment    = [
   "OPENCHAIN_VM_ENDPOINT=http://172.17.0.1:4243",
-  "OPENCHAIN_PEER_ID=vp$NN"
   "OPENCHAIN_PEER_ADDRESSAUTODETECT=true",
-  "OPENCHAIN_PEER_DISCOVERY_ROOTNODE=$ROOTNODE:30303"
 ]
 
 [maintainer]
